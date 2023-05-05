@@ -9,6 +9,7 @@ def print_usage_and_exit():
     print("Usage: python analyze.py <file> [<output_file>] [<openai_api_key>]")
     sys.exit(1)
 
+
 def create_prompt(language, code):
     return (
         f"I want you to act as a code analyzer. Can you improve the following code for readability and maintainability?"
@@ -54,7 +55,7 @@ def main():
         sys.exit(1)
 
     prompt = create_prompt(language, code)
-    
+
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[

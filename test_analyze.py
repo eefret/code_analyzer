@@ -1,6 +1,7 @@
 import pytest
 import analyze
 
+
 def test_create_prompt():
     language = "python"
     code = "print('Hello, World!')"
