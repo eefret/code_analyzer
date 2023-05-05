@@ -1,5 +1,5 @@
 import pytest
-import analyze
+from code_analyzer import analyze
 
 
 def test_create_prompt():
