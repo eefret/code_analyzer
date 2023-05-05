@@ -36,5 +36,21 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
+      env: 
+        OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
       run: |
         pytest
+    - name: Run analyze.py on test file
+      run: |
+        python analyze.py test_files/bad_code.go test_files/bad_code.ai-version.go
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    - name: Check if output file was created
+      run: |
+        if [ ! -f test_files/bad_code.ai-version.go ]; then
+          echo "Output file not found."
+          exit 1
+        else
+          echo "Output file found."
+          cat test_files/bad_code.ai-version.go
+        fi
