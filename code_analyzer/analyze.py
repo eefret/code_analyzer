@@ -67,6 +67,7 @@ def main():
     )
 
     full_response = response.choices[0].message.content.strip()
+    print(full_response)
     improved_code = extract_improved_code(full_response, language)
 
     with open(output_file_path, "w") as output_file:
