@@ -32,7 +32,7 @@ sudo pacman -S python python-pip
 1. Install the OpenAI Python package:
 
 ```bash
-pip install openai
+pip install -r requirements.txt
 ```
 
 2. Set your OpenAI API key as an environment variable or pass it as an argument:
@@ -58,5 +58,5 @@ This will generate an improved version of the code in a file with the same name 
 ## Notes
 
 - The script currently supports the following file extensions: .go, .py, .js, .java, .cs, .cpp, .rb, and .php.
-- If the output file is not provided, it will be saved with the same name as the input file but with the .ai-version extension.
+- If the output file is not provided, it will be saved with the same name as the input file but with the .ai-version.{extension}.
 - If the API key is not provided as an argument, the script will look for it in the environment variable OPENAI_API_KEY.
