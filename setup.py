@@ -9,7 +9,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "code-analyzer=analyze:main",
+            'code-analyzer=code_analyzer.analyze:main',
         ],
     },
 )
