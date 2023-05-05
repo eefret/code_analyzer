@@ -29,10 +29,10 @@ sudo pacman -S python python-pip
 
 ## Usage
 
-1. Install the OpenAI Python package:
+1. Install the package, inside the project directory, with the following command:
 
 ```bash
-pip install -r requirements.txt
+pip install --editable .
 ```
 
 2. Set your OpenAI API key as an environment variable or pass it as an argument:
@@ -44,16 +44,16 @@ export OPENAI_API_KEY="your_api_key_here"
 3. Run the script with the input file as the first argument, and optionally, the output file and API key as the second and third arguments:
 
 ```bash
-python analyze.py <input_file> [<output_file>] [<openai_api_key>]
+code-analyzer <input_file> [<output_file>] [<openai_api_key>]
 ```
 
 Example:
 
 ```bash
-python analyze.py bad_code.js
+code-analyzer test_files/bad_code.js test_files/bad_code.ai.js
 ```
 
-This will generate an improved version of the code in a file with the same name but with the .ai-version extension (e.g., bad_code.py.ai-version).
+This will generate an improved version of the code in a file with the same name but with the .ai extension (e.g., bad_code.ai.js).
 
 ## Notes
 

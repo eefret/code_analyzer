@@ -1,4 +1,5 @@
 **.ai-version.*
+**.ai.*
 populator.ts
 
 # .gitignore file for a Python project using pytest
@@ -9,3 +10,6 @@ __pycache__/
 # Ignore pytest cache and temporary files
 .benchmarks/
 .pytest_cache/
+
+# Ignore pip install files 
+*.egg-info/

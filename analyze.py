@@ -33,7 +33,7 @@ def main():
 
     file_path = sys.argv[1]
     output_file_path = sys.argv[2] if len(sys.argv) > 2 else \
-        f"{pathlib.Path(file_path).stem}.ai-version{pathlib.Path(file_path).suffix}"
+        f"{pathlib.Path(file_path).stem}.ai{pathlib.Path(file_path).suffix}"
     api_key = sys.argv[3] if len(sys.argv) > 3 else os.environ.get("OPENAI_API_KEY")
 
     if api_key is None:

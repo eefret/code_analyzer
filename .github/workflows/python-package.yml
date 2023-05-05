@@ -42,15 +42,16 @@ jobs:
         pytest
     - name: Run analyze.py on test file
       run: |
-        python analyze.py test_files/bad_code.go test_files/bad_code.ai-version.go
+        pip install --editable .
+        code-analyzer test_files/bad_code.go test_files/bad_code.ai.go
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     - name: Check if output file was created
       run: |
-        if [ ! -f test_files/bad_code.ai-version.go ]; then
+        if [ ! -f test_files/bad_code.ai.go ]; then
           echo "Output file not found."
           exit 1
         else
           echo "Output file found."
-          cat test_files/bad_code.ai-version.go
+          cat test_files/bad_code.ai.go
         fi
