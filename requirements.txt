@@ -1,1 +1,3 @@
 openai
+flake8
+pytest
